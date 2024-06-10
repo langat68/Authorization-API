@@ -1,0 +1,278 @@
+
+GET http://localhost:8000/ok/
+
+###
+GET http://localhost:8000/orders
+###
+GET http://localhost:8000/comment
+###
+GET http://localhost:8000/city
+###
+GET http://localhost:8000/category
+###
+GET http://localhost:8000/state
+###
+GET http://localhost:8000/users
+###
+GET http://localhost:8000/menuItem
+###
+GET http://localhost:8000/orderMenuItem
+###
+GET http://localhost:8000/orderStatus
+###
+GET http://localhost:8000/statusCatalog
+###
+GET http://localhost:8000/address
+###
+GET http://localhost:8000/restaurantOwner
+###
+GET http://localhost:8000/restaurant
+###
+GET http://localhost:8000/users/4
+###
+put http://localhost:8000/users/2
+###
+DELETE http://localhost:8000/users/1
+###
+POST http://localhost:8000/users
+Content-Type: application/json
+
+{
+   
+    "name": "senior",
+    "contact_phone": "07865423",
+    "phone_verified":true,
+    "email":"olmo@gmail.com",
+    "email_verified":true,
+    "confirmation_code":"hjt67g",
+    "password":"14567",
+    "address": "kutus"
+}
+
+
+###
+POST http://localhost:8000/orders
+Content-Type: application/json
+
+{
+  
+  "estimated_delivery_time": "2021-04-06",
+  "actual_delivery_time": "2021-03-09",
+  "price":1200,
+  "discount": 50,
+  "final_price": 1150,
+  "comment": "have your id",
+  " restaurant_id" : 4,
+  "delivery_address_id": 45,
+    "user_id" : 4,
+    "driver_id": 1,
+}
+###
+POST http://localhost:8000/menuItem
+Content-Type: application/json
+
+{
+  
+   "name":"rice-mix",
+   " description": "one",
+   " ingredients":"ndengu, cabbage",
+    "price":70,
+   " active":true,
+    "created_at":"2023-05-08",
+   " updated_at":"2023-05-07",
+    "restaurant_id":1,
+   "category_id":1
+}
+
+
+###
+
+POST http://localhost:8000/restaurantOwner
+Content-Type: application/json
+
+{
+   
+    "owner_id": 1,
+    "restaurant_id": 1
+}
+###
+
+POST http://localhost:8000/state
+Content-Type: application/json
+
+{
+   
+    "name": "Florida",
+    "code": "47"
+}
+
+###
+POST http://localhost:8000/state
+Content-Type: application/json
+
+{
+   
+    "name": "detroit",
+    "code": "48"
+}
+###
+POST http://localhost:8000/state
+Content-Type: application/json
+
+{
+   
+    "name": "Colorado",
+    "code": "49"
+}
+###
+
+POST http://localhost:8000/orderStatus
+Content-Type: application/json
+
+{
+  
+    " order_id": 13,
+    " status_catalog_id":1,
+    "created_at":"2022-4-6"
+   
+}
+
+###
+
+POST http://localhost:8000/comment
+Content-Type: application/json
+
+{
+    "comment_text":"in perfect condition",
+    "is_complaint": false,
+    "is_praise": true,
+    "created_at":"2022-8-7",
+    "updated_at":"2022-3-15",
+    "order_id": 1,
+    "user_id": 2
+}
+###
+
+POST http://localhost:8000/category
+Content-Type: application/json
+
+{
+   
+    "name": "capuccino"
+}
+
+###
+POST http://localhost:8000/category
+Content-Type: application/json
+
+{
+   
+    "name": "coffee"
+}
+
+###
+POST http://localhost:8000/orderMenuItem
+Content-Type: application/json
+
+{
+   
+   " quantity": 2,
+    "item_price": 700,
+    "price":1400,
+   "order_id":1,
+    "menu_item_id":1
+}
+###
+POST http://localhost:8000/address
+Content-Type: application/json
+
+{
+   
+    " street_address_1":" 56st",
+    "street_address_2": "57th",
+   " zip_code":"67g",
+   " delivery_instructions": "one piece",
+    "created_at":"2023-4-8",
+   " updated_at":"2023-8-9",
+    "user_id":2,
+    "city_id": 1
+}
+
+###
+POST http://localhost:8000/address
+Content-Type: application/json
+
+{
+   
+    " street_address_1":" 59st",
+    "street_address_2": "54th",
+   " zip_code":"69g",
+   " delivery_instructions": "two piece",
+    "created_at":"2023-3-9",
+   " updated_at":"2023-5-8",
+    "user_id":2,
+    "city_id": 1
+}
+
+
+//authentication
+
+###
+POST http://localhost:8000/register
+Content-Type: application/json
+
+{
+   
+    "userId": 1,
+    "username": "leo",
+    "password": "123",
+    "role": "admin"
+}
+###
+POST http://localhost:8000/register
+Content-Type: application/json
+
+{
+   
+    "userId": 1,
+    "username": "Mambet",
+    "password": "pass",
+    "role": "admin"
+}
+###
+POST http://localhost:8000/register
+Content-Type: application/json
+
+{
+   
+    "userId": 2,
+    "username": "Mosccardo",
+    "password": "783",
+    "role": "user"
+}
+###
+GET http://localhost:8000/register
+
+###
+
+POST  http://localhost:8000/auth/login
+Content-Type: application/json
+
+{
+    "username": "Mo",
+    "password": "pass"
+}
+
+###
+
+POST  http://localhost:8000/auth/login
+Content-Type: application/json
+
+{
+    
+    "username": "Mambet",
+    "password": "pass",
+   
+
+    
+}
